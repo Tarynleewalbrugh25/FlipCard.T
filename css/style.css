@@ -1,0 +1,44 @@
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    text-align: center;
+}
+.card{
+    width: 500px;
+    aspect-ratio:1 / 1;
+    margin: 20px auto;
+    position: relative;
+    border: 1px solid;
+    border-radius: 4px;
+    transition: transform 2s;
+    transition-delay: preserve-3d;
+}
+:is(.front, .back,img[alt="profile"] ){
+    width:100%
+}
+img[alt="profile"] {
+    aspect-ratio: 1/1;
+}
+.front, .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    backface-visibility: hidden;
+}
+.back {
+    z-index: -1;
+}
+.front {
+    aspect-ratio: 1/1;
+    background-color: linear-gradient(to right,green,red);
+    color:black;
+}
+.card:hover .front{
+    transform: translateY(180);
+    opacity: 0;
+}
